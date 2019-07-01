@@ -1,6 +1,4 @@
-using System;
-
-namespace Farmacia.Models
+namespace Farmacia.Models.ViewModels
 {
     public class ErrorViewModel
     {
