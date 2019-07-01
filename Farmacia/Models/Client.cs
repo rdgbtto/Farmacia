@@ -8,7 +8,7 @@ namespace Farmacia.Models
         public string Nome { get; set; }
         public string Cpf { get; set; }
         public DateTime Nascimento { get; set; }
-        public char Sexo { get; set; }
+        public string Sexo { get; set; }
         public string Endereco { get; set; }
         public string Complemento { get; set; }
         public string Bairro { get; set; }
