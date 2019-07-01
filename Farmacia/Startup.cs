@@ -9,6 +9,8 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.EntityFrameworkCore;
+using Farmacia.Models;
 
 namespace Farmacia
 {
@@ -33,6 +35,10 @@ namespace Farmacia
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            services.AddDbContext<FarmaciaContext>(options =>
+                    options.UseMySql(Configuration.GetConnectionString("FarmaciaContext"),
+                        builder => builder.MigrationsAssembly("Farmacia")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
